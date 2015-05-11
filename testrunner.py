@@ -51,8 +51,11 @@ def main(sdk_path, test_path):
 
     # Discover and run tests.
     suite = unittest.loader.TestLoader().discover(test_path)
-    unittest.TextTestRunner(verbosity=2).run(suite)
+    result = unittest.TextTestRunner(verbosity=2).run(suite)
 
+    # Fail the build if the suite was not successful!
+    if not result.wasSuccessful():
+        sys.exit(result)
 
 if __name__ == '__main__':
     parser = optparse.OptionParser(USAGE)
