@@ -22,4 +22,4 @@ before_install:
 install:
 - pip install -t lib -r requirements.txt
 script:
-- gcloud -q preview app deploy app.yaml --set-default
+- gcloud -q preview app deploy app.yaml
