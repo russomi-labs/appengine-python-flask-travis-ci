@@ -22,6 +22,9 @@ before_install:
 
 install:
 - pip install -t lib -r requirements.txt
+
 script:
 - python testrunner.py $HOME/gcloud/google-cloud-sdk ./tests
+
+after_success:
 - gcloud -q preview app deploy app.yaml --version=1
