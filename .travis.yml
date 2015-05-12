@@ -31,14 +31,18 @@ install:
   - pip install virtualenvwrapper
   - source virtualenvwrapper.sh
   - add2virtualenv ./lib
+  - pip install coveralls
 
 before_script:
   - mysql -e 'create database migrate_dev;'
   - TARGET_DB=$TEST_DB python main.py db upgrade
 
 script:
-  - python testrunner.py $HOME/gcloud/google-cloud-sdk ./tests
+  # - python testrunner.py $HOME/gcloud/google-cloud-sdk ./tests
+  - coverage run testrunner.py $HOME/gcloud/google-cloud-sdk ./tests
 
 after_success:
+  - coveralls
   - gcloud -q preview app deploy app.yaml --version=1
-  - TARGET_DB=$PROD_DB python main.py db upgrade
+  # commenting this out since the dedicated ip addy was removed to avoid costs!
+  # - TARGET_DB=$PROD_DB python main.py db upgrade
