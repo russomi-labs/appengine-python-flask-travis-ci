@@ -1,13 +1,14 @@
 """`main` is the top level module for your Flask application."""
 
 # Import the Flask Framework
+import os
 from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.script import Manager
 from flask.ext.migrate import Migrate, MigrateCommand
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/migrate_dev'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('TARGET_DB')
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
