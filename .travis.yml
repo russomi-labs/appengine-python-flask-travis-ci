@@ -27,8 +27,9 @@ before_install:
 install:
   - pip install -t lib -r requirements.txt
   - pip install virtualenvwrapper
-  - source /usr/local/bin/virtualenvwrapper.sh
-  - add2virtualenv ./lib
+  - which virtualenvwrapper.sh
+#  - source /usr/local/bin/virtualenvwrapper.sh
+#  - add2virtualenv ./lib
 
 before_script:
   - mysql -e 'create database migrate_dev;'
