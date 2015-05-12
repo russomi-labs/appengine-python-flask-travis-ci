@@ -1,4 +1,4 @@
-## Project Name [![Build Status](https://travis-ci.org/russomi/appengine-python-flask-travis-ci.svg?branch=master)](https://travis-ci.org/russomi/appengine-python-flask-travis-ci)
+## Project Name [![Build Status](https://travis-ci.org/russomi/appengine-python-flask-travis-ci.svg?branch=master)](https://travis-ci.org/russomi/appengine-python-flask-travis-ci) [![Coverage Status](https://coveralls.io/repos/russomi/appengine-python-flask-travis-ci/badge.svg?branch=master)](https://coveralls.io/r/russomi/appengine-python-flask-travis-ci?branch=master)
 
 Project description.
 
