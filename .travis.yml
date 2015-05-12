@@ -39,7 +39,7 @@ before_script:
 
 script:
   # - python testrunner.py $HOME/gcloud/google-cloud-sdk ./tests
-  - coverage run testrunner.py $HOME/gcloud/google-cloud-sdk ./tests
+  - coverage run --source . testrunner.py $HOME/gcloud/google-cloud-sdk ./tests
 
 after_success:
   - coveralls
