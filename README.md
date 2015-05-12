@@ -1,4 +1,4 @@
-## Project Name ![](https://api.travis-ci.org/russomi/appengine-python-flask-travis-ci.svg?branch=master)
+## Project Name [![Build Status](https://travis-ci.org/russomi/appengine-python-flask-travis-ci.svg?branch=master)](https://travis-ci.org/russomi/appengine-python-flask-travis-ci)
 
 Project description.
 
